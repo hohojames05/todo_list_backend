@@ -13,9 +13,5 @@ module TodoItems
     def call
       TodoItem.create!(@params.merge(id: SecureRandom.uuid))
     end
-
-    private
-
-    # Add your Private Method Here
   end
 end

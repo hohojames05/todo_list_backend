@@ -1,14 +1,13 @@
 class TodoItemsController < ApplicationController
 	def index
 		command = TodoItems::Index.call()
-		binding.pry
 		render json: command.result, status: :ok
 	end
 
 	def create
 		command = TodoItems::Create.call(todo_items_params)
 		if command.success?
-			render json: command.result, status: :ok
+			render json: command.result, status: :created
 		else
 			render json: { error: command.errors.full_messages }, status: :unprocessable_entity
 		end

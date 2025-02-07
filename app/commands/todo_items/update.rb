@@ -15,10 +15,5 @@ module TodoItems
       todo_item.update!(@params)
       todo_item
     end
-
-    private
-
-    # Add your Private Method Here
-    #
   end
 end
