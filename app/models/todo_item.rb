@@ -10,5 +10,5 @@
 #  updated_at  :datetime         not null
 #
 class TodoItem < ApplicationRecord
-  enum status: %i[pending inprogress completed]
+  enum status: { pending: 0, inprogress: 1, completed: 2 }
 end

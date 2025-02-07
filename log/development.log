@@ -32,3 +32,347 @@ Migrating to CreateTodoItems (20250206155231)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3554274729300479100)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTodoItem Load (1.9ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.7ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Create (0.7ms)[0m  [1m[32mINSERT INTO "todo_items" ("id", "description", "status", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", "df594361-7b6d-4308-bd8e-1d1dccfb9eef"], ["description", "No Message"], ["status", "0"], ["title", "Add 1"], ["created_at", "2025-02-07 00:40:02.628050"], ["updated_at", "2025-02-07 00:40:02.628050"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.7ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Create (0.6ms)[0m  [1m[32mINSERT INTO "todo_items" ("id", "description", "status", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"], ["description", "No Message"], ["status", "0"], ["title", "Add 1"], ["created_at", "2025-02-07 00:40:35.660249"], ["updated_at", "2025-02-07 00:40:35.660249"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.8ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = $1 LIMIT $2[0m  [["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (1.3ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 00:46:06.914292"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = $1 LIMIT $2[0m  [["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.4ms)[0m  [1m[33mUPDATE "todo_items" SET "description" = $1, "status" = $2, "title" = $3, "updated_at" = $4 WHERE "todo_items"."id" = $5[0m  [["description", "TESTING THE UPDATE ENDPOINT"], ["status", "0"], ["title", "UPDATED LIST"], ["updated_at", "2025-02-07 00:49:04.519405"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.9ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = $1 LIMIT $2[0m  [["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.4ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 00:49:28.212476"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.8ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (3.1ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = $1[0m  [["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTodoItem Load (2.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (3.8ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = $1 LIMIT $2[0m  [["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (6.9ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:14:58.764699"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.6ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:15:37.395287"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (1.0ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.7ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:16:01.212120"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.4ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.5ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.4ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:16:35.712598"], ["id", "68f69db0-e30d-4a45-a61d-3b38403951c6"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.1ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:16:35.714740"], ["id", "df594361-7b6d-4308-bd8e-1d1dccfb9eef"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.1ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:16:35.715455"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.4ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.3ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:16:48.384206"], ["id", "68f69db0-e30d-4a45-a61d-3b38403951c6"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.2ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:16:48.386172"], ["id", "df594361-7b6d-4308-bd8e-1d1dccfb9eef"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.1ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:16:48.387244"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.7ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.4ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:17:14.549524"], ["id", "68f69db0-e30d-4a45-a61d-3b38403951c6"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.3ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:17:14.552191"], ["id", "df594361-7b6d-4308-bd8e-1d1dccfb9eef"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.2ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:17:14.553766"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.4ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.4ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:17:25.396854"], ["id", "68f69db0-e30d-4a45-a61d-3b38403951c6"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.2ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:17:25.398972"], ["id", "df594361-7b6d-4308-bd8e-1d1dccfb9eef"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.1ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:17:25.399960"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.8ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.6ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:18:19.142313"], ["id", "68f69db0-e30d-4a45-a61d-3b38403951c6"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.2ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:18:19.145112"], ["id", "df594361-7b6d-4308-bd8e-1d1dccfb9eef"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.1ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:18:19.146018"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.5ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.4ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:18:28.250518"], ["id", "68f69db0-e30d-4a45-a61d-3b38403951c6"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.3ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:18:28.253952"], ["id", "df594361-7b6d-4308-bd8e-1d1dccfb9eef"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.2ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:18:28.255463"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.4ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" ORDER BY "todo_items"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.3ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "2"], ["updated_at", "2025-02-07 01:18:53.357165"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.7ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" ORDER BY "todo_items"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodoItem Update (0.3ms)[0m  [1m[33mUPDATE "todo_items" SET "status" = $1, "updated_at" = $2 WHERE "todo_items"."id" = $3[0m  [["status", "0"], ["updated_at", "2025-02-07 01:19:08.965538"], ["id", "19e97d23-8595-4a9b-bdee-9d7cc350ea5d"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  [1m[36mTodoItem Load (0.8ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" ORDER BY "todo_items"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" ORDER BY "todo_items"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodoItem Load (0.5ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" ORDER BY "todo_items"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" ORDER BY "todo_items"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" ORDER BY "todo_items"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodoItem Load (0.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+Started POST "/todo_items" for ::1 at 2025-02-07 14:38:44 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant TodoItemsController):
+  
+Started GET "/todo_items" for ::1 at 2025-02-07 14:40:14 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant TodoItemsController):
+  
+Started GET "/todo_items" for ::1 at 2025-02-07 14:41:26 +0800
+  
+SyntaxError (/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:7: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:16: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:25: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:34: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+):
+  
+app/controllers/todo_items_controller.rb:7: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:16: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:25: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:34: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:7: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:16: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:25: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:34: syntax error, unexpected ':', expecting '}'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:42:41 +0800
+  
+SyntaxError (/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:12: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+):
+  
+app/controllers/todo_items_controller.rb:12: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:12: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:44:09 +0800
+  
+SyntaxError (/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors }, status: :u...
+			                   ^
+):
+  
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:44:22 +0800
+  
+SyntaxError (/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors.full_messages...
+			                   ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors.full_messages...
+			                   ^
+):
+  
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:44:57 +0800
+  
+SyntaxError (/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors.full_messages...
+			                   ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+			render json { error: command.errors.full_messages...
+			                   ^
+):
+  
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:45:22 +0800
+  
+SyntaxError (/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+			render json { errors: command.errors.full_messages...
+			                    ^
+/Users/ys-admin/Personal/todo_list_backend/app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+			render json { errors: command.errors.full_messages...
+			                    ^
+):
+  
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/todo_items_controller.rb:30: syntax error, unexpected ':', expecting '}'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:46:06 +0800
+  
+NoMethodError (undefined method `action_encoding_template' for TodoItemsController:Class):
+  
+actionpack (7.0.8.7) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.8.7) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.8.7) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.8.7) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.8.7) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.8.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.7) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.10) lib/rack/etag.rb:27:in `call'
+rack (2.2.10) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.10) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.7) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.7) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.7) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.7) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.7) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.7) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.7) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.7) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.10) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.10) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.7) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.7) lib/rails/engine.rb:530:in `call'
+puma (5.6.9) lib/puma/configuration.rb:252:in `call'
+puma (5.6.9) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.9) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.9) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.9) lib/puma/server.rb:443:in `process_client'
+puma (5.6.9) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:47:00 +0800
+Processing by TodoItemsController#index as */*
+  [1m[36mTodoItem Load (2.0ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 7657)
+
+
+  [1m[36mCACHE TodoItem Load (0.0ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `result' for #<ActiveRecord::Relation [#<TodoItem id: "68f69db0-e30d-4a45-a61d-3b38403951c6", description: "Test Desciription", status: nil, title: "Todo Title", created_at: "2025-02-06 16:04:32.918227000 +0000", updated_at: "2025-02-07 01:18:28.250518000 +0000">, #<TodoItem id: "df594361-7b6d-4308-bd8e-1d1dccfb9eef", description: "No Message", status: nil, title: "Add 1", created_at: "2025-02-07 00:40:02.628050000 +0000", updated_at: "2025-02-07 01:18:28.253952000 +0000">, #<TodoItem id: "19e97d23-8595-4a9b-bdee-9d7cc350ea5d", description: "TESTING THE UPDATE ENDPOINT", status: nil, title: "UPDATED LIST", created_at: "2025-02-07 00:40:35.660249000 +0000", updated_at: "2025-02-07 01:19:08.965538000 +0000">]>):
+  
+app/controllers/todo_items_controller.rb:4:in `index'
+  [1m[36mCACHE TodoItem Load (0.0ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/todo_items" for ::1 at 2025-02-07 14:52:28 +0800
+Processing by TodoItemsController#index as */*
+  [1m[36mTodoItem Load (0.7ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms | Allocations: 6790)
+
+
+  [1m[36mCACHE TodoItem Load (0.0ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `result' for #<ActiveRecord::Relation [#<TodoItem id: "68f69db0-e30d-4a45-a61d-3b38403951c6", description: "Test Desciription", status: nil, title: "Todo Title", created_at: "2025-02-06 16:04:32.918227000 +0000", updated_at: "2025-02-07 01:18:28.250518000 +0000">, #<TodoItem id: "df594361-7b6d-4308-bd8e-1d1dccfb9eef", description: "No Message", status: nil, title: "Add 1", created_at: "2025-02-07 00:40:02.628050000 +0000", updated_at: "2025-02-07 01:18:28.253952000 +0000">, #<TodoItem id: "19e97d23-8595-4a9b-bdee-9d7cc350ea5d", description: "TESTING THE UPDATE ENDPOINT", status: nil, title: "UPDATED LIST", created_at: "2025-02-07 00:40:35.660249000 +0000", updated_at: "2025-02-07 01:19:08.965538000 +0000">]>):
+  
+app/controllers/todo_items_controller.rb:4:in `index'
+  [1m[36mCACHE TodoItem Load (0.0ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/todo_items" for ::1 at 2025-02-07 14:52:34 +0800
+Processing by TodoItemsController#index as */*
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1174)
+
+
+  [1m[36mCACHE TodoItem Load (0.0ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `result' for #<ActiveRecord::Relation [#<TodoItem id: "68f69db0-e30d-4a45-a61d-3b38403951c6", description: "Test Desciription", status: nil, title: "Todo Title", created_at: "2025-02-06 16:04:32.918227000 +0000", updated_at: "2025-02-07 01:18:28.250518000 +0000">, #<TodoItem id: "df594361-7b6d-4308-bd8e-1d1dccfb9eef", description: "No Message", status: nil, title: "Add 1", created_at: "2025-02-07 00:40:02.628050000 +0000", updated_at: "2025-02-07 01:18:28.253952000 +0000">, #<TodoItem id: "19e97d23-8595-4a9b-bdee-9d7cc350ea5d", description: "TESTING THE UPDATE ENDPOINT", status: nil, title: "UPDATED LIST", created_at: "2025-02-07 00:40:35.660249000 +0000", updated_at: "2025-02-07 01:19:08.965538000 +0000">]>):
+  
+app/controllers/todo_items_controller.rb:4:in `index'
+  [1m[36mCACHE TodoItem Load (0.0ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/todo_items" for ::1 at 2025-02-07 14:52:56 +0800
+Processing by TodoItemsController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1268)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x0000000106039cb8>):
+  
+app/controllers/todo_items_controller.rb:4:in `index'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:53:43 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodoItemsController#index as */*
+  [1m[36mTodoItem Load (1.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/controllers/todo_items_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 149942ms (ActiveRecord: 7.2ms | Allocations: 235742)
+
+
+  
+NoMethodError (undefined method `result' for #<ActiveRecord::Relation [#<TodoItem id: "68f69db0-e30d-4a45-a61d-3b38403951c6", description: "Test Desciription", status: nil, title: "Todo Title", created_at: "2025-02-06 16:04:32.918227000 +0000", updated_at: "2025-02-07 01:18:28.250518000 +0000">, #<TodoItem id: "df594361-7b6d-4308-bd8e-1d1dccfb9eef", description: "No Message", status: nil, title: "Add 1", created_at: "2025-02-07 00:40:02.628050000 +0000", updated_at: "2025-02-07 01:18:28.253952000 +0000">, #<TodoItem id: "19e97d23-8595-4a9b-bdee-9d7cc350ea5d", description: "TESTING THE UPDATE ENDPOINT", status: nil, title: "UPDATED LIST", created_at: "2025-02-07 00:40:35.660249000 +0000", updated_at: "2025-02-07 01:19:08.965538000 +0000">]>):
+  
+app/controllers/todo_items_controller.rb:5:in `index'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:56:16 +0800
+Processing by TodoItemsController#index as */*
+  [1m[36mTodoItem Load (0.3ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todo_items_controller.rb:5:in `index'
+Started GET "/todo_items" for ::1 at 2025-02-07 14:58:13 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodoItemsController#index as */*
+  [1m[36mTodoItem Load (1.6ms)[0m  [1m[34mSELECT "todo_items".* FROM "todo_items"[0m
+  ↳ app/controllers/todo_items_controller.rb:5:in `index'
+Completed 200 OK in 8976ms (Views: 0.8ms | ActiveRecord: 7.0ms | Allocations: 33434)
+
+
