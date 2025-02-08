@@ -6,8 +6,12 @@ module TodoItems
       new.call
     end
 
+    # def initialize(params)
+    #   @params = params
+    # end
+
     def call
-      result = TodoItem.all
+      result = TodoItem.all.order(:created_at)
       result
     end
 

@@ -1,13 +1,13 @@
 class TodoItemsController < ApplicationController
 	def index
 		command = TodoItems::Index.call()
-		render json: command.result, status: :ok
+		render json: { data: command.result }, status: :ok
 	end
 
 	def create
 		command = TodoItems::Create.call(todo_items_params)
 		if command.success?
-			render json: command.result, status: :created
+			render json: command.result, root: 'data', status: :ok
 		else
 			render json: { error: command.errors.full_messages }, status: :unprocessable_entity
 		end
@@ -16,7 +16,7 @@ class TodoItemsController < ApplicationController
 	def update
 		command = TodoItems::Update.call(todo_items_params)
 		if command.success?
-			render json: command.result, status: :ok
+			render json: command.result, status: :ok, root: 'data'
 		else
 			render json: { error: command.errors.full_messages }, status: :unprocessable_entity
 		end
@@ -25,7 +25,7 @@ class TodoItemsController < ApplicationController
 	def destroy
 		command = TodoItems::Destroy.call(id_params[:id])
 		if command.success?
-			render json: command.result, status: :no_content
+			render json: command.result, status: :no_content, root: 'data'
 		else
 			render json: { error: command.errors.full_messages }, status: :unprocessable_entity
 		end

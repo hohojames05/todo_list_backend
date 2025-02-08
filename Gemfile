@@ -45,6 +45,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'simple_command'
+  gem 'rack-cors'
 end
 
 group :development do
