@@ -1,6 +1,6 @@
 class TodoItemsController < ApplicationController
 	def index
-		command = TodoItems::Index.call()
+		command = TodoItems::Index.call(index_params)
 		render json: { data: command.result }, status: :ok
 	end
 
@@ -29,6 +29,11 @@ class TodoItemsController < ApplicationController
 		else
 			render json: { error: command.errors.full_messages }, status: :unprocessable_entity
 		end
+	end
+
+	def get_status
+		command = TodoItems::GetStatus.call
+		render json: { data: command.result }, status: :ok
 	end
 
 	private
