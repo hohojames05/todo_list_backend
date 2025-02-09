@@ -17,5 +17,4 @@ class TodoItem < ApplicationRecord
     { key: 'inprogress', name: 'In Progress' },
     { key: 'completed', name: 'Completed' }
   ].freeze
-  
 end
